@@ -22,4 +22,4 @@ This is our internship project for Techologica. It consists of a website that vi
 
 ## 📄 Presentation and Documentation: <a name="documentation"></a>
 * [Documentation]()
-* [Presentation]()
+* [Presentation](https://github.com/idiliev18/Technologica-internship/blob/master/Presentation%20and%20Documentation/Technologica%20presentation.pptx)
