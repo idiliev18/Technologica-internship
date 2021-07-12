@@ -125,7 +125,7 @@ tbody, tr, th, td
     }
       
     tr:nth-child(odd) {
-      background: #ccc;
+      background-color:#79e07e;
     }
     
 		td {
@@ -250,4 +250,8 @@ tbody, tr, th, td
       margin: 0;
 
     }
-  
+
+    .colorTable
+    {
+      background-color: #79e07e;
+    }
