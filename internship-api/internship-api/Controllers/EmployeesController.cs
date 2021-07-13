@@ -1,10 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using internship_api.Data;
 
 namespace internship_api.Controllers
 {
@@ -12,36 +13,95 @@ namespace internship_api.Controllers
     [ApiController]
     public class EmployeesController : ControllerBase
     {
-        // GET: api/<EmployeesController>
+        private readonly internship_apiContext _context;
+
+        public EmployeesController(internship_apiContext context)
+        {
+            _context = context;
+        }
+
+        // GET: api/Employees
         [HttpGet]
-        public IEnumerable<string> Get()
+        public async Task<ActionResult<IEnumerable<Employee>>> GetEmployee()
         {
-            return new string[] { "value1", "value2" };
+            return await _context.Employee.ToListAsync();
         }
 
-        // GET api/<EmployeesController>/5
+        // GET: api/Employees/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public async Task<ActionResult<Employee>> GetEmployee(int id)
         {
-            return "value";
+            var employee = await _context.Employee.FindAsync(id);
+
+            if (employee == null)
+            {
+                return NotFound();
+            }
+
+            return employee;
         }
 
-        // POST api/<EmployeesController>
-        [HttpPost]
-        public void Post([FromBody] string value)
-        {
-        }
-
-        // PUT api/<EmployeesController>/5
+        // PUT: api/Employees/5
+        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public async Task<IActionResult> PutEmployee(int id, Employee employee)
         {
+            if (id != employee.Id)
+            {
+                return BadRequest();
+            }
+
+            _context.Entry(employee).State = EntityState.Modified;
+
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!EmployeeExists(id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            return NoContent();
         }
 
-        // DELETE api/<EmployeesController>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
+        // POST: api/Employees
+        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        [HttpPost]
+        public async Task<ActionResult<Employee>> PostEmployee(Employee employee)
         {
+            _context.Employee.Add(employee);
+            await _context.SaveChangesAsync();
+
+            return CreatedAtAction("GetEmployee", new { id = employee.Id }, employee);
+        }
+
+        // DELETE: api/Employees/5
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteEmployee(int id)
+        {
+            var employee = await _context.Employee.FindAsync(id);
+            if (employee == null)
+            {
+                return NotFound();
+            }
+
+            _context.Employee.Remove(employee);
+            await _context.SaveChangesAsync();
+
+            return NoContent();
+        }
+
+        private bool EmployeeExists(int id)
+        {
+            return _context.Employee.Any(e => e.Id == id);
         }
     }
 }

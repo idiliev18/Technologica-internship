@@ -14,8 +14,11 @@ export class TableCssComponent implements OnInit {
 
   ngOnInit(): void {
       this.employeeService.getTasks().subscribe((employees)=>{
+          console.log(employees);
+
           this.employees = employees;
       })
+
   }
 
 }
