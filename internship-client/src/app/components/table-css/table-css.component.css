@@ -1,0 +1,279 @@
+body {
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.7;
+    color: black;
+}
+
+.header {
+    height: 100vh;
+    background-image:
+    linear-gradient(to right bottom,
+   rgba(139, 245, 183, 0.8),
+   rgba(6, 148, 60, 0.8)),
+   url('https://upload.wikimedia.org/wikipedia/commons/5/58/Azis_in_2018_%28cropped%29.png');
+
+  background-size: cover;
+    background-position: top;
+    position: relative;
+
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+}
+
+.brand-box {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+}
+
+.brand { font-size: 20px; }
+
+.text-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.heading-primary {
+    color: #fff;
+    text-transform: uppercase;
+
+    backface-visibility: hidden;
+    margin-bottom: 30px;
+}
+
+.heading-primary-main {
+    display: block;
+    font-size: 26px;
+    font-weight: 400;
+    letter-spacing: 5px;
+}
+
+.heading-primary-sub {
+    display: block;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 7.4px;
+}
+
+.btn:link,
+.btn:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 10px 20px;
+    display: inline-block;
+    border-radius: 100px;
+    transition: all .2s;
+    position: relative;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-white {
+    background-color: #fff;
+    color: #777;
+  font-size: 14px;
+}
+
+table
+{
+  text-align: left;
+  margin:auto;
+  margin-top: 150px;
+}
+
+table, th, td {
+  border: 1px solid black;
+}
+
+tbody, tr, th, td
+{
+  border: 1px solid black;
+  padding: 30px 30px 30px 30px;
+}
+
+.deletebtn {
+  background-color: #f44336;
+  padding: 14px 20px;
+  margin: 8px, 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+@media
+	only screen
+    and (max-width: 1160px), (min-device-width: 1368px)
+    and (max-device-width: 1324px)  {
+
+		/* Force table to not be like tables anymore */
+		table, thead, tbody, th, td, tr {
+			display: block;
+		}
+
+		/* Hide table headers (but not display: none;, for accessibility) */
+		thead tr {
+			position: absolute;
+			top: -9999px;
+			left: -9999px;
+		}
+
+    tr {
+      margin:  100px 0 1rem 0;
+      padding: 0 0 0 0;
+    }
+
+    tr:nth-child(odd) {
+      background-color:#79e07e;
+    }
+
+		td {
+			/* Behave  like a "row" */
+			border: 1px solid black;
+			border-bottom: 1px solid black;
+			position: relative;
+			padding-left: 55%;
+      font-size: 50px;
+		}
+
+		td:before {
+			/* Now like a table header */
+			position: absolute;
+			/* Top/left values mimic padding */
+			top: 0;
+			left: 6px;
+			width: 45%;
+			padding-right: 10px;
+			white-space: nowrap;
+		}
+
+    .brand { font-size: 50px; }
+
+    .heading-primary-main {
+      display: block;
+      font-size: 40px;
+      font-weight: 400;
+      letter-spacing: 5px;
+  }
+
+  .heading-primary-sub {
+      display: block;
+      font-size: 40px;
+      font-weight: 700;
+      letter-spacing: 7.4px;
+  }
+
+
+  .btn-white {
+    background-color: #fff;
+    color: #777;
+  font-size: 40px;
+}
+
+		td:nth-of-type(1):before { content: "Id"; }
+		td:nth-of-type(2):before { content: "First name"; }
+		td:nth-of-type(3):before { content: "Surname"; }
+		td:nth-of-type(4):before { content: "Last name"; }
+		td:nth-of-type(5):before { content: "Gender"; }
+		td:nth-of-type(6):before { content: "Age"; }
+		td:nth-of-type(7):before { content: "Position"; }
+		td:nth-of-type(8):before { content: "Salary"; }
+		td:nth-of-type(9):before { content: "Year of appointment"; }
+		td:nth-of-type(10):before { content: "Total holidays"; }
+    td:nth-of-type(11):before { content: "Remaining holidays"; }
+    td:nth-of-type(12):before { content: "Delete"; }
+	}
+  @import url(https://fonts.googleapis.com/css?family=Merriweather:300,900);
+
+  *, *:before, *:after{
+    box-sizing: border-box;
+    font: 300 1em/1.5 'Merriweather', serif; color: #242424;
+    padding: 0; margin: 0;
+  }
+
+  html, body{background: rgb(236, 240, 241);}
+
+  .content{
+    width: 850px;
+    margin: auto;
+    margin-bottom: 350px; /* Same height as footer */
+    padding: 100px 0;
+  }
+    h1{
+      color: #111;
+      font-size: 3em;
+      font-weight: 900;
+      padding: 0 0 20px 0;
+    }
+    h2{
+      color: #111;
+      font-size: 2em;
+      font-weight: 900;
+      padding: 0 0 15px 0;
+    }
+    p{
+      font-size: 1.25em;
+      padding: 0 0 40px 0;
+    }
+
+  .fixed_footer{
+    width: 100%;
+    height: 350px;
+    background: #111;
+    position: fixed; left: 0; bottom: 0;
+    z-index: -100;
+  }
+     .fixed_footer p{
+      color: #696969;
+      column-count: 2;
+      column-gap: 50px;
+      font-size: 1em;
+      font-weight: 300;
+
+    }
+
+    footer {
+    text-align: center;
+    background: #444;
+    margin-top: 10px;
+    padding-top: 50px;
+    padding-bottom: 20px;
+
+    }
+    .colorTable
+    {
+      background-color: #79e07e;
+    }
+
+    .footer{
+      padding-top: 300px;
+      height: 50vh;
+      color: #666;
+      position: relative;
+
+      clip-path: polygon(0 80%, 100% 24%, 100% 75vh, 0% 100%);
+
+    }
+
+    .pcolor{
+      color:rgba(6, 148, 60, 0.8);
+    }
+
+
+
+
+
+
+

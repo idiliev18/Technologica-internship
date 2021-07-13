@@ -36,83 +36,25 @@
 		<th role="columnheader">Year of appointment</th>
 		<th role="columnheader">Total holidays</th>
 		<th role="columnheader">Remaining holidays</th>
-		<th role="columnheader">Delete</th>
 	  </tr>
 	</thead>
 	<tbody role="rowgroup">
-	  <tr role="row" class = "colorTable">
-		<td role="cell">1</td>
-		<td role="cell">John</td>
-		<td role="cell">Williams</td>
-		<td role="cell">Jones</td>
-		<td role="cell">Male</td>
-		<td role="cell">50</td>
-		<td role="cell">Backend</td>
-		<td role="cell">5000$</td>
-		<td role="cell">2017</td>
-		<td role="cell">30</td>
-		<td role="cell">20</td>
-		<td role="cell"> <button class = "deletebtn">delete</button></td>
-	  </tr>
-	  <tr role="row">
-		<td role="cell">2</td>
-		<td role="cell">Adam</td>
-		<td role="cell">Antonio</td>
-		<td role="cell">Harris</td>
-		<td role="cell">Male</td>
-		<td role="cell">35</td>
-		<td role="cell">HR</td>
-		<td role="cell">2700$</td>
-		<td role="cell">2018</td>
-		<td role="cell">30</td>
-		<td role="cell">7</td>
-		<td role="cell"> <button class = "deletebtn">delete</button></td>
-	  </tr>
-	  <tr role="row" class = "colorTable">
-		<td role="cell">3</td>
-		<td role="cell">Erick</td>
-		<td role="cell">Trevor</td>
-		<td role="cell">Phillips</td>
-		<td role="cell">Male</td>
-		<td role="cell">30</td>
-		<td role="cell">System Administrator</td>
-		<td role="cell">2400$</td>
-		<td role="cell">2020</td>
-		<td role="cell">30</td>
-		<td role="cell">18</td>
-		<td role="cell"> <button class = "deletebtn">delete</button></td>
-	  </tr>
-	  <tr role="row">
-		<td role="cell">4</td>
-		<td role="cell">Sara</td>
-		<td role="cell">Larson</td>
-		<td role="cell">Smith</td>
-		<td role="cell">Female</td>
-		<td role="cell">43</td>
-		<td role="cell">Backend</td>
-		<td role="cell">7000$</td>
-		<td role="cell">2016</td>
-		<td role="cell">30</td>
-		<td role="cell">19</td>
-		<td role="cell"> <button class = "deletebtn">delete</button></td>
-	  </tr>
-	  <tr role="row" class = "colorTable">
-		<td role="cell">5</td>
-		<td role="cell">Patrick</td>
-		<td role="cell">Samuel</td>
-		<td role="cell">Johnson</td>
-		<td role="cell">Non-binary</td>
-		<td role="cell">28</td>
-		<td role="cell">Frontend</td>
-		<td role="cell">2000$</td>
-		<td role="cell">2021</td>
-		<td role="cell">30</td>
-		<td role="cell">25</td>
-		<td role="cell"> <button class = "deletebtn">delete</button></td>
+	  <tr  role="row" class = "colorTable">
+		<td role="cell">{{item.Id}}</td>
+		<td role="cell">{{item.FirstName}}</td>
+		<td role="cell">{{item.Surname}}</td>
+		<td role="cell">{{item.LastName}}</td>
+		<td role="cell">{{item.Gender}}</td>
+		<td role="cell">{{item.Age}}</td>
+		<td role="cell">{{item.Position}}</td>
+		<td role="cell">{{item.Salary}}</td>
+		<td role="cell">{{item.YearOfAppointment}}</td>
+		<td role="cell">{{item.TotalHolidays}}</td>
+		<td role="cell">{{item.UsedHolidays}}</td>
+        <td role="cell"> <button class = "deletebtn">delete</button></td>
 	  </tr>
 	</tbody>
   </table>
-
   <footer class="footer">
 	<p class="pcolor">
     GinkoBiloba, Technologica internship

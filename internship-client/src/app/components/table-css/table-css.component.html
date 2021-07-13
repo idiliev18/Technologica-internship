@@ -1,2 +1,33 @@
-<h1>CSS</h1>
-<div *ngFor="let item of employees">{{item.FirstName}}</div>
+<table role="table">
+	<thead role="rowgroup">
+	  <tr role="row">
+		<th role="columnheader">Id</th>
+		<th role="columnheader">First name</th>
+		<th role="columnheader">Surname</th>
+		<th role="columnheader">Last name</th>
+		<th role="columnheader">Gender</th>
+		<th role="columnheader">Age</th>
+		<th role="columnheader">Position</th>
+		<th role="columnheader">Salary</th>
+		<th role="columnheader">Year of appointment</th>
+		<th role="columnheader">Total holidays</th>
+		<th role="columnheader">Remaining holidays</th>
+	  </tr>
+	</thead>
+	<tbody role="rowgroup">
+	  <tr *ngFor="let item of employees" role="row" class = "colorTable">
+		<td role="cell">{{item.Id}}</td>
+		<td role="cell">{{item.FirstName}}</td>
+		<td role="cell">{{item.Surname}}</td>
+		<td role="cell">{{item.LastName}}</td>
+		<td role="cell">{{item.Gender}}</td>
+		<td role="cell">{{item.Age}}</td>
+		<td role="cell">{{item.Position}}</td>
+		<td role="cell">{{item.Salary}}</td>
+		<td role="cell">{{item.YearOfAppointment}}</td>
+		<td role="cell">{{item.TotalHolidays}}</td>
+		<td role="cell">{{item.UsedHolidays}}</td>
+        <td role="cell"> <button class = "deletebtn">delete</button></td>
+	  </tr>
+	</tbody>
+  </table>
