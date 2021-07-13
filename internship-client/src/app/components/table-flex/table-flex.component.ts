@@ -1,4 +1,6 @@
+import { Employee } from './../../Employee';
 import { Component, OnInit } from '@angular/core';
+import { EmployeesService } from 'src/app/services/employees.service';
 
 @Component({
   selector: 'app-table-flex',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TableFlexComponent implements OnInit {
 
-  constructor() { }
+    employees: Employee[] = [];
+    constructor(private employeeService: EmployeesService) { }
 
-  ngOnInit(): void {
-  }
+    ngOnInit(): void {
+        this.employeeService.getTasks().subscribe((employees)=>{
+            this.employees = employees;
+        })
+    }
 
 }
