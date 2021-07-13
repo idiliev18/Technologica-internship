@@ -1,33 +1,34 @@
-<table role="table">
-	<thead role="rowgroup">
-	  <tr role="row">
-		<th role="columnheader">Id</th>
-		<th role="columnheader">First name</th>
-		<th role="columnheader">Surname</th>
-		<th role="columnheader">Last name</th>
-		<th role="columnheader">Gender</th>
-		<th role="columnheader">Age</th>
-		<th role="columnheader">Position</th>
-		<th role="columnheader">Salary</th>
-		<th role="columnheader">Year of appointment</th>
-		<th role="columnheader">Total holidays</th>
-		<th role="columnheader">Remaining holidays</th>
-	  </tr>
-	</thead>
-	<tbody role="rowgroup">
-	  <tr *ngFor="let item of employees" role="row" class = "colorTable">
-		<td role="cell">{{item.id}}</td>
-		<td role="cell">{{item.firstName}}</td>
-		<td role="cell">{{item.surname}}</td>
-		<td role="cell">{{item.lastName}}</td>
-		<td role="cell">{{item.gender}}</td>
-		<td role="cell">{{item.age}}</td>
-		<td role="cell">{{item.position}}</td>
-		<td role="cell">{{item.salary}}</td>
-		<td role="cell">{{item.yearOfAppointment}}</td>
-		<td role="cell">{{item.totalHolidays}}</td>
-		<td role="cell">{{item.usedHolidays}}</td>
-        <td role="cell"> <button class = "deletebtn">delete</button></td>
-	  </tr>
-	</tbody>
-  </table>
+<table>
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">First name</th>
+            <th scope="col">Surname</th>
+            <th scope="col">Last name</th>
+            <th scope="col">Gender</th>
+            <th scope="col">Age</th>
+            <th scope="col">Position</th>
+            <th scope="col">Salary</th>
+            <th scope="col">Year of appointment</th>
+            <th scope="col">Total holidays</th>
+            <th scope="col">Remaining holidays</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of employees">
+            <td data-label="Id">{{ item.id }}</td>
+            <td data-label="First name">{{ item.firstName }}</td>
+            <td data-label="Surname">{{ item.surname }}</td>
+            <td data-label="Last name">{{ item.lastName }}</td>
+            <td data-label="Gender">{{ item.gender }}</td>
+            <td data-label="Age">{{ item.age }}</td>
+            <td data-label="Salary">{{ item.position }}</td>
+            <td data-label="Position">{{ item.salary }}</td>
+            <td data-label="Year of appointment">{{ item.yearOfAppointment }}
+            </td>
+            <td data-label="Total holidays">{{ item.totalHolidays }}</td>
+            <td data-label="Remaining holidays">{{ item.usedHolidays }}</td>
+            <td role="cell"><button class="deletebtn">delete</button></td>
+        </tr>
+    </tbody>
+</table>
