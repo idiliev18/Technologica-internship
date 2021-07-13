@@ -242,16 +242,31 @@ tbody, tr, th, td
     
     }
 
-    .green {
-
-      padding-top: 0px;
-      color:rgba(6, 148, 60, 0.8);
-      font-size: small;
-      margin: 0;
-
-    }
+  
 
     .colorTable
     {
       background-color: #79e07e;
     }
+
+    .footer{
+      padding-top: 300px;
+      height: 50vh;
+      color: #666;
+      position: relative;
+  
+      clip-path: polygon(0 80%, 100% 45%, 100% 75vh, 0% 100%);
+
+    }
+
+    .pcolor{
+      color:rgba(6, 148, 60, 0.8);
+    }
+      
+      
+        
+        
+        
+      
+      
+    
