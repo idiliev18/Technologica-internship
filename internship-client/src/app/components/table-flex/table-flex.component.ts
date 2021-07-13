@@ -13,7 +13,7 @@ export class TableFlexComponent implements OnInit {
     constructor(private employeeService: EmployeesService) { }
 
     ngOnInit(): void {
-        this.employeeService.getTasks().subscribe((employees)=>{
+        this.employeeService.getEmployees().subscribe((employees)=>{
             this.employees = employees;
         })
     }

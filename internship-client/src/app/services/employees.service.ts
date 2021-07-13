@@ -11,7 +11,12 @@ export class EmployeesService {
 
   constructor(private http: HttpClient) { }
 
-  getTasks(): Observable<Employee[]> {
+  getEmployees(): Observable<Employee[]> {
       return this.http.get<Employee[]>(this.apiUrl);
   }
+
+  deleteEmployee(id: any): Observable<Employee[]>{
+        return this.http.delete<Employee[]>(this.apiUrl + `/${id}`);
+  }
+
 }

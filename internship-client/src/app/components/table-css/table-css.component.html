@@ -28,7 +28,7 @@
             </td>
             <td data-label="Total holidays">{{ item.totalHolidays }}</td>
             <td data-label="Remaining holidays">{{ item.usedHolidays }}</td>
-            <td role="cell"><button class="deletebtn">delete</button></td>
+            <td role="cell"><button class="deletebtn" (click) = "deleteEmployee(item.id)">delete</button></td>
         </tr>
     </tbody>
 </table>

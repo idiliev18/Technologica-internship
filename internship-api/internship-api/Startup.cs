@@ -33,6 +33,7 @@ namespace internship_api
                 options.AddDefaultPolicy(builder =>
                 {
                     builder.SetIsOriginAllowed(origin => new Uri(origin).Host == "localhost");
+                    builder.WithOrigins("http://localhost:4200").AllowAnyMethod().AllowAnyHeader();
                 });
             });
 
@@ -63,7 +64,7 @@ namespace internship_api
             app.UseHttpsRedirection();
 
             app.UseRouting();
-            app.UseCors();
+            app.UseCors(options => options.WithOrigins("http://localhost:4200").AllowAnyMethod());
 
             app.UseAuthorization();
 
