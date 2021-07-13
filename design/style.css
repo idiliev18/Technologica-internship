@@ -103,10 +103,20 @@ tbody, tr, th, td
   padding: 30px 30px 30px 30px;
 }
 
+.deletebtn {
+  background-color: #f44336;
+  padding: 14px 20px;
+  margin: 8px, 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
 @media
 	only screen 
     and (max-width: 1160px), (min-device-width: 1368px) 
-    and (max-device-width: 1324px)  {
+    and (max-device-width: 1324px)  { 
 
 		/* Force table to not be like tables anymore */
 		table, thead, tbody, th, td, tr {
@@ -183,8 +193,8 @@ tbody, tr, th, td
 		td:nth-of-type(9):before { content: "Year of appointment"; }
 		td:nth-of-type(10):before { content: "Total holidays"; }
     td:nth-of-type(11):before { content: "Remaining holidays"; }
+    td:nth-of-type(12):before { content: "Delete"; }
 	}
-
   @import url(https://fonts.googleapis.com/css?family=Merriweather:300,900);
 
   *, *:before, *:after{
