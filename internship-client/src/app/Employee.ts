@@ -1,13 +1,13 @@
 export interface Employee {
-    Id: Number,
-    FirstName: String,
-    Surname?: String,
-    LastName: String,
-    Gender: String,
-    Age: Number,
-    Position: String,
-    Salary: String,
-    YearOfAppointment: Number,
-    TotalHolidays: Number,
-    UsedHolidays: Number
+    id: Number,
+    firstName: String,
+    surname?: String,
+    lastName: String,
+    gender: String,
+    age: Number,
+    position: String,
+    salary: String,
+    yearOfAppointment: Number,
+    totalHolidays: Number,
+    usedHolidays: Number
 }
