@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { EmployeesService } from 'src/app/services/employees.service';
+import { Employee } from 'src/app/Employee';
 
 @Component({
   selector: 'app-table-css',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TableCssComponent implements OnInit {
 
-  constructor() { }
+  employees: Employee[] = [];
+  constructor(private employeeService: EmployeesService) { }
 
   ngOnInit(): void {
+      this.employeeService.getTasks().subscribe((employees)=>{
+          this.employees = employees;
+      })
   }
 
 }
