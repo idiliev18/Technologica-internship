@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://github.com/idiliev18/Technologica-internship" rel="noopener">
-    <img src="..\design\biglogo.png" alt="Logo" width="500" height="200">
+    <img src="design\biglogo.png" alt="Logo" width="500" height="200">
   </a>
 </p>
 
