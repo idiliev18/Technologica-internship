@@ -1,34 +1,105 @@
 <table>
     <thead>
         <tr>
-            <th scope="col">Id</th>
-            <th scope="col">First name</th>
-            <th scope="col">Surname</th>
-            <th scope="col">Last name</th>
-            <th scope="col">Gender</th>
-            <th scope="col">Age</th>
-            <th scope="col">Position</th>
-            <th scope="col">Salary</th>
-            <th scope="col">Year of appointment</th>
-            <th scope="col">Total holidays</th>
-            <th scope="col">Remaining holidays</th>
+            <th scope="col" (click)="sortEmployees('id')">{{ header.id }}</th>
+            <th scope="col" (click)="sortEmployees('firstName')">
+                {{ header.firstName }}
+            </th>
+            <th scope="col" (click)="sortEmployees('surname')">
+                {{ header.surname }}
+            </th>
+            <th scope="col" (click)="sortEmployees('lastName')">
+                {{ header.lastName }}
+            </th>
+            <th scope="col" (click)="sortEmployees('gender')">
+                {{ header.gender }}
+            </th>
+            <th scope="col" (click)="sortEmployees('age')">{{ header.age }}</th>
+            <th scope="col" (click)="sortEmployees('position')">
+                {{ header.position }}
+            </th>
+            <th scope="col" (click)="sortEmployees('salary')">
+                {{ header.salary }}
+            </th>
+            <th scope="col" (click)="sortEmployees('yearOfAppointment')">
+                {{ header.yearOfAppointment }}
+            </th>
+            <th scope="col" (click)="sortEmployees('totalHolidays')">
+                {{ header.totalHolidays }}
+            </th>
+            <th scope="col" (click)="sortEmployees('remainingHolidays')">
+                {{ header.remainingHolidays }}
+            </th>
+            <th style="cursor: default" scope="col">Actions</th>
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let item of employees">
-            <td data-label="Id">{{ item.id }}</td>
-            <td data-label="First name">{{ item.firstName }}</td>
-            <td data-label="Surname">{{ item.surname }}</td>
-            <td data-label="Last name">{{ item.lastName }}</td>
-            <td data-label="Gender">{{ item.gender }}</td>
-            <td data-label="Age">{{ item.age }}</td>
-            <td data-label="Salary">{{ item.position }}</td>
-            <td data-label="Position">{{ item.salary }}</td>
-            <td data-label="Year of appointment">{{ item.yearOfAppointment }}
+        <tr *ngFor="let item of employees" class="tableData">
+            <td [attr.data-label]="header.id" (click)="sortEmployees('id')">
+                {{ item.id }}
             </td>
-            <td data-label="Total holidays">{{ item.totalHolidays }}</td>
-            <td data-label="Remaining holidays">{{ item.usedHolidays }}</td>
-            <td role="cell"><button class="deletebtn" (click) = "deleteEmployee(item.id)">delete</button></td>
+            <td
+                [attr.data-label]="header.firstName"
+                (click)="sortEmployees('firstName')"
+            >
+                {{ item.firstName }}
+            </td>
+            <td
+                [attr.data-label]="header.surname"
+                (click)="sortEmployees('surname')"
+            >
+                {{ item.surname }}
+            </td>
+            <td
+                [attr.data-label]="header.lastName"
+                (click)="sortEmployees('lastName')"
+            >
+                {{ item.lastName }}
+            </td>
+            <td
+                [attr.data-label]="header.gender"
+                (click)="sortEmployees('gender')"
+            >
+                {{ item.gender }}
+            </td>
+            <td [attr.data-label]="header.age" (click)="sortEmployees('age')">
+                {{ item.age }}
+            </td>
+            <td
+                [attr.data-label]="header.position"
+                (click)="sortEmployees('position')"
+            >
+                {{ item.position }}
+            </td>
+            <td
+                [attr.data-label]="header.salary"
+                (click)="sortEmployees('salary')"
+            >
+                {{ item.salary }}
+            </td>
+            <td
+                [attr.data-label]="header.yearOfAppointment"
+                (click)="sortEmployees('yearOfAppointment')"
+            >
+                {{ item.yearOfAppointment }}
+            </td>
+            <td
+                [attr.data-label]="header.totalHolidays"
+                (click)="sortEmployees('totalHolidays')"
+            >
+                {{ item.totalHolidays }}
+            </td>
+            <td
+                [attr.data-label]="header.remainingHolidays"
+                (click)="sortEmployees('remainingHolidays')"
+            >
+                {{ item.usedHolidays }}
+            </td>
+            <td>
+                <button class="btn" (click)="deleteEmployee(item.id)">
+                    <i class="fa fa-trash"></i> Delete
+                </button>
+            </td>
         </tr>
     </tbody>
 </table>

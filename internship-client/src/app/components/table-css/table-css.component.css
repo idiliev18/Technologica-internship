@@ -1,5 +1,5 @@
 body {
-    font-family: 'Roboto Slab', serif;
+    font-family: "Roboto Slab", serif;
     line-height: 1.25;
 }
 
@@ -11,15 +11,26 @@ table {
     background-color: #79e07e;
 }
 
-th{
-    user-select: none;
+.tableData {
+    pointer-events: none;
 }
 
-td, th{
+th {
+    user-select: none;
+    cursor: pointer;
+}
+
+td,
+th {
     border: 1px solid black;
 }
 
+
 @media screen and (min-width: 1258px) {
+    .tableData {
+        pointer-events: all;
+    }
+
     table {
         margin: 0;
         padding: 0;
@@ -42,6 +53,9 @@ td, th{
 }
 
 @media screen and (max-width: 1400px) {
+    .tableData {
+        pointer-events: all;
+    }
     table {
         border: 0;
     }
@@ -62,7 +76,7 @@ td, th{
     }
 
     table tr {
-        border-bottom: 3px solid #ddd;
+        border-bottom: 1px solid #ddd;
         display: block;
         margin-bottom: 0.625em;
     }
@@ -87,7 +101,6 @@ td, th{
     table td:last-child {
         border-bottom: 0;
     }
-
 }
 
 @media screen and (max-width: 548px) {
@@ -95,7 +108,9 @@ td, th{
         /* color:red; */
         border: 0;
     }
-
+    .tableData {
+        pointer-events: all;
+    }
     table thead {
         border: none;
         clip: rect(0 0 0 0);
@@ -106,7 +121,7 @@ td, th{
     }
 
     table tr {
-        border-bottom: 3px solid #ddd;
+        border-bottom: 1px solid #ddd;
         display: block;
         margin-bottom: 1em;
     }
@@ -152,7 +167,9 @@ td, th{
         /* color:red; */
         border: 0;
     }
-
+    .tableData {
+        pointer-events: all;
+    }
     table thead {
         border: none;
         clip: rect(0 0 0 0);
@@ -163,7 +180,7 @@ td, th{
     }
 
     table tr {
-        border-bottom: 3px solid #ddd;
+        border-bottom: 1px solid #ddd;
         display: block;
         margin-bottom: 1em;
     }
@@ -188,7 +205,6 @@ td, th{
     table td:last-child {
         border-bottom: 0;
     }
-
 }
 
 @media screen and (max-width: 209px) {
@@ -196,7 +212,9 @@ td, th{
         /* color:red; */
         border: 0;
     }
-
+    .tableData {
+        pointer-events: all;
+    }
     table thead {
         border: none;
         clip: rect(0 0 0 0);
@@ -207,7 +225,7 @@ td, th{
     }
 
     table tr {
-        border-bottom: 3px solid #ddd;
+        border-bottom: 1px solid #ddd;
         display: block;
         margin-bottom: 1em;
     }
@@ -215,7 +233,7 @@ td, th{
     table td {
         border-bottom: 1px solid #ddd;
         display: block;
-        font-size: .7em;
+        font-size: 0.7em;
         text-align: right;
     }
 
@@ -232,7 +250,22 @@ td, th{
     table td:last-child {
         border-bottom: 0;
     }
-
 }
 
+.btn {
+    background-color: #79e07e;
+    border: none;
+    color: white;
+    padding: 12px 16px;
+    font-size: 16px;
+    cursor: pointer;
+}
 
+.btn:hover {
+    background-color: #4fc755;
+}
+@media screen and (min-width: 1401px) {
+    .tableData {
+        pointer-events: none;
+    }
+}
