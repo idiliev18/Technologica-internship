@@ -1,13 +1,18 @@
-<nav>
-    <ul>
-        <li>
-            <a routerLink="/">Home</a>
-        </li>
-        <li>
-            <a routerLink="/table-css">Responsive Table - CSS</a>
-        </li>
-        <li>
-            <a routerLink="/table-flex">Responsive Table - Flex-Layoult</a>
-        </li>
-    </ul>
-</nav>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" linkRouter="/">GinkoBiloba</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" routerLink="/table-css">Table - CSS</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled"    >Table - Bootstrap</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>

@@ -1,19 +1,25 @@
+p{
+    font-size: 1.25em;
+    padding: 0 0 40px 0;
+
+  }
+
 footer {
     text-align: center;
     background: #444;
     margin-top: 10px;
-    padding-top: 50px;
-    padding-bottom: 20px;
+    padding-top: 10px;
+    padding-bottom: 70px;
 
     }
 
     .footer{
-      padding-top: 300px;
-      height: 50vh;
+      padding-top: 500px;
+      height: 30vh;
       color: #666;
-      position: relative;
+      position: static;
 
-      clip-path: polygon(0 80%, 100% 24%, 100% 75vh, 0% 100%);
+      clip-path: polygon(0 83%, 100% 53%, 100% 100%, 0% 100%);
 
     }
 
