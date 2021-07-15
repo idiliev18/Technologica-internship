@@ -30,11 +30,11 @@
             <th scope="col" (click)="sortEmployees('remainingHolidays')">
                 {{ header.remainingHolidays }}
             </th>
-            <th style="cursor: default" scope="col">Actions</th>
+            <th style="cursor: default" scope="col" (dblclick)="deleteAllEmployees()">Actions</th>
         </tr>
     </thead>
-    <tbody>
-        <tr *ngFor="let item of employees" class="tableData">
+    <tbody *ngFor="let item of employees" >
+        <tr class="tableData">
             <td [attr.data-label]="header.id" (click)="sortEmployees('id')">
                 {{ item.id }}
             </td>
@@ -96,7 +96,7 @@
                 {{ item.usedHolidays }}
             </td>
             <td>
-                <button class="btn" (click)="deleteEmployee(item.id)">
+                <button style="pointer-events: all" class="btn" (click)="deleteEmployee(item.id)">
                     <i class="fa fa-trash"></i> Delete
                 </button>
             </td>

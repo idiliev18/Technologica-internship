@@ -99,6 +99,21 @@ namespace internship_api.Controllers
             return NoContent();
         }
 
+        // DELETE: api/Employees
+        [HttpDelete]
+        public async Task<IActionResult> DeleteAllEmployees()
+        {
+            List<Employee> employees = await _context.Employee.ToListAsync();
+
+            for (int i = 0; i < employees.Count; i++)
+            {
+                _context.Employee.Remove(employees[i]);
+                await _context.SaveChangesAsync();
+            }
+
+            return NoContent();
+        }
+
         private bool EmployeeExists(int id)
         {
             return _context.Employee.Any(e => e.Id == id);

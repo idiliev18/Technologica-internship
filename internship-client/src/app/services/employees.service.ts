@@ -19,4 +19,8 @@ export class EmployeesService {
         return this.http.delete<Employee[]>(this.apiUrl + `/${id}`);
   }
 
+  deleteAllEmployees(): Observable<Employee[]>{
+      return this.http.delete<Employee[]>(this.apiUrl);
+  }
+
 }

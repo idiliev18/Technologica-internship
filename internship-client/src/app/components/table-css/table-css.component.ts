@@ -83,6 +83,11 @@ export class TableCssComponent implements OnInit {
         });
     }
 
+    deleteAllEmployees(){
+        this.employeeService.deleteAllEmployees().subscribe();
+        this.employees = [];
+    }
+
     ngOnInit(): void {
         this.employeeService.getEmployees().subscribe((employees) => {
             this.employees = employees;
